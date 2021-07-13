@@ -23,5 +23,3 @@ for n in arreglo_numeros
     end
 end
 puts lista
-
-
