@@ -40,13 +40,15 @@ serie_4 = {
     sinopsis: "El brujo Geralt, un cazador de monstruos, trata de encontrar su lugar en un mundo en el que las personas suelen ser más malvadas que las bestias.",
     genero: "acción"
 }
-serie_5 = {
-    nombre: "La chica nueva",
-    formato: "Serie",
-    temporadas: 2,
-    sinopsis: "Nanno, una niña misteriosa e inteligente, se traslada a diferentes escuelas, exponiendo las mentiras y las faltas de los estudiantes y profesores en todo momento.",
-    genero: "drama, misterior, thriller, terror"
-}
+
+lista   = [     "La chica nueva",           "Serie",            2,          "Nanno, una niña misteriosa e inteligente, se traslada a diferentes escuelas, exponiendo las mentiras y las faltas de los estudiantes y profesores en todo momento.", "drama, misterior, thriller, terror"]
+serie_5 = {nombre: "La chica nueva", formato: "Serie", temporadas: 2, sinopsis: "Nanno, una niña misteriosa e inteligente, se traslada a diferentes escuelas, exponiendo las mentiras y las faltas de los estudiantes y profesores en todo momento.", genero: "drama, misterior, thriller, terror"}
+
+matriz = [ 
+    ["a","b","c"], 
+    ["d","e","f"], 
+    ["g","h","i"] 
+]
 
 # Agrupar las series en una lista
 series = [
@@ -57,6 +59,7 @@ series = [
 # Caja de lógica - Salida
 # Mensajes en consola donde se muestre el nombre y el formato
 for serie in series
-    puts "Nombre: #{serie[:nombre]} \t Formato: #{serie[:formato]}" 
+    puts "Nombre: #{serie[:nombre]} \t Formato: #{serie[:formato]} \n"
+    puts    
 end
 puts "====="
