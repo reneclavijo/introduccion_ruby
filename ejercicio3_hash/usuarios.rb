@@ -48,14 +48,16 @@ puts "sus datos. Escribir salir para salir."
 while comando != "salir"
     nombre_filtro = gets.chomp
     encontramos_al_trabajador = false
-    for u in lista_usuarios
-        if nombre_filtro == u[:nombre]
-            encontramos_al_trabajador = true
-            puts "#{u[:nombre]} \t pass: #{u[:pass]}"
+    comando = nombre_filtro
+    if comando != "salir"
+        for u in lista_usuarios
+            if nombre_filtro == u[:nombre]
+                encontramos_al_trabajador = true
+                puts "#{u[:nombre]} \t pass: #{u[:pass]}"
+            end
+        end
+        if encontramos_al_trabajador == false
+            puts "No se encontró a nadie llamado #{nombre_filtro}"
         end
     end
-    if encontramos_al_trabajador == false
-        puts "No se encontró a nadie llamado #{nombre_filtro}"
-    end
-    comando = nombre_filtro
 end
