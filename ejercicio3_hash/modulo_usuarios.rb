@@ -43,6 +43,7 @@ module ModuloUsuarios
         # puts "Escribe el nombre del archivo"
         File.write("usuarios.txt", lista_usuarios)
     end
-    
+        
 
+    
 end

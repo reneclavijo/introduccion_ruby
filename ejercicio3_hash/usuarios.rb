@@ -38,3 +38,6 @@ imprimir_lista_usuarios_hash(lista_usuarios)
 guardar_lista_usuarios_en_archivo(lista_usuarios)
 
 generar_menu_buscar_usuario(lista_usuarios)
+
+
+puts pizzas
