@@ -1,8 +1,10 @@
 require_relative 'generador_pokemon'
+require_relative 'gestor_datos'
 
 class Batalla
     attr_reader :pokemon_local
     attr_reader :pokemon_visitante
+    attr_reader :ganador
 
     # constructores
     # vacío
@@ -40,10 +42,15 @@ class Batalla
 
     def quien_gano?
         puts "#{@pokemon_local.nombre} vs #{@pokemon_visitante.nombre}"
-        if @pokemon_local.vida <= 0
-            puts "#{@pokemon_visitante.nombre} gano"
-        else
+        if @pokemon_local.vida > 0
+            @ganador = @pokemon_local
             puts "#{@pokemon_local.nombre} gano"
+        else
+            @ganador = @pokemon_visitante
+            puts "#{@pokemon_visitante.nombre} gano"
         end
+
+        GestorDatos.generar_csv(self)
+        GestorDatos.generar_txt(self)
     end
 end
