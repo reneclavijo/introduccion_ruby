@@ -2,6 +2,7 @@ require 'faker' #Trae las gemas
 require_relative 'cliente' #Trae mis archivos
 require_relative 'gato'
 require_relative 'perro'
+require_relative 'generador_cliente'
 
 
 # Utlizando un FOR crear una lista con 50
@@ -10,22 +11,7 @@ require_relative 'perro'
 # utlizando un método, mostrar la información del cliente
 
 # lista_de_cliente = Array.new
-lista_de_cliente = []
-
-for i in 0..99
-    cliente = Cliente.new
-    cliente.nombre = Faker::Name.name
-    cliente.correo = Faker::Internet.email(
-        name: cliente.nombre, 
-        separators: ".", 
-        domain: "sandiagamestudio"
-    )
-
-    # cliente.mascota = Mascota.new
-    # cliente.mascota.nombre = Faker::Name.name
-
-    lista_de_cliente << cliente
-end
+clientes_sin_mascotas = GeneradorClientes.generar_sin_mascotas(40)
 
 lista_gatos = []
 lista_perros = []

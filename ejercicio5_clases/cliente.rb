@@ -21,7 +21,7 @@ class Cliente
 
     def mostrar_info
         puts "Mi nombre de cliente es #{@nombre}, 
-        mi correo es #{@correo} y he comprado 
+        mi correo es #{self.correo} y he comprado 
         #{@cantidad_compras} veces"
     end
 
