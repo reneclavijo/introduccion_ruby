@@ -19,10 +19,18 @@ class Juego
     end
 
     def comenzar
-        puts @palabra_secreta
-        while true
-            guiones = cambiar_letras_a_guiones_1
+        puts "Bienvenido al ahorcado ☠, adivina la palabra..."
+
+        guiones = cambiar_letras_a_guiones_1
+        puts guiones
+        
+        while guiones.gsub(" ", "") != @palabra_secreta and @vidas > 0
+            
+            puts "vidas: #{@vidas}"
+
             letra = gets.chomp
+            letra_encontrada = false
+
             for posicion_letra in 0..@palabra_secreta.length-1
                 if @palabra_secreta[posicion_letra] == letra
                     # palabra_secreta => hola
@@ -30,16 +38,33 @@ class Juego
                     # guiones         => _ _ _ _ 
                     #                    01234567
                     guiones[posicion_letra * 2] = letra
+                    letra_encontrada = true
                 end
             end
-            print guiones
-            # preguntar si esta letra existe en mi palabra
-            # si existe debería cambbiar el guion por la letra
+
+            if letra_encontrada == false
+                @vidas -= 1
+            end
+
+            puts guiones
         end
+
+        he_ganado?
     end
+
+    private # métodos privados 👇
 
     def cambiar_letras_a_guiones_1
         return "_ " * @palabra_secreta.length
+    end
+
+    def he_ganado?
+        if @vidas > 0
+            puts "GANASTE ^_^ 🧑"
+        else
+            puts "AHORCADO!! 💀"
+        end
+        puts "La palabra era #{@palabra_secreta}"
     end
 
     # def cambiar_letras_a_guiones_2
