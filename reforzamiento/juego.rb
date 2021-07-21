@@ -6,15 +6,8 @@ class Juego
     attr_reader :vidas
 
     def initialize
-        al_azar = rand(0..1)
-        if al_azar == 0
-            # relación de asosiación / dependencia
-            @palabra_secreta = GeneradorPalabras.generar_planeta
-        else
-            # relación de asosiación / dependencia
-            @palabra_secreta = GeneradorPalabras.generar_palabra_estatica
-        end
-
+        # relación de asosiación / dependencia
+        @palabra_secreta = GeneradorPalabras.generar
         @vidas = 5
     end
 
