@@ -18,4 +18,13 @@ class Pedido
         @estado         = "preparando"
     end
 
+    def mostrar_resumen
+        puts "===== RESUMEN PEDIDO 📄✍ ====="
+        puts "Código:           #{self.codigo}"
+        puts "Fecha creacion:   #{self.fecha_creacion}"
+        puts "Fecha entrega :   #{self.fecha_entrega}"
+        puts "Estado:           #{self.estado}"
+        
+
+    end
 end
