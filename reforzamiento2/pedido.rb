@@ -19,14 +19,15 @@ class Pedido
     end
 
     def mostrar_resumen
+        puts
         puts "********** RESUMEN PEDIDO 📄✍ **********"
-        puts "Código:           #{self.codigo}"
+        puts "Código        :   #{self.codigo}"
         puts "Fecha creacion:   #{self.fecha_creacion}"
         puts "Fecha entrega :   #{self.fecha_entrega}"
-        puts "Estado:           #{self.estado}"
-        
+        puts "Estado        :   #{self.estado}"
+        puts "\t === Productos ==="
         self.productos.each do |producto|
-            puts "#{producto.nombre} \t #{producto.precio} 💲"
+            puts "|> #{producto.nombre} \t #{producto.precio} 💲"
         end
         puts "______________________________________"
         puts "Total a pagar es: \t #{suma_total} 💰"
