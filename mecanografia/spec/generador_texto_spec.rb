@@ -23,6 +23,6 @@ RSpec.describe GeneradorTexto do
     end
 
     it "con palabras cortas"
-    it "con combinaciones de teclas"
+    it "con combinaciones de teclas" # qwert - yuiop
 
 end
