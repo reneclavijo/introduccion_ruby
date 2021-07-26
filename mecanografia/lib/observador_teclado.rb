@@ -1,14 +1,7 @@
 class ObservadorTeclado
 
-    def self.validar_con_espacios(guia, letra_nueva)
-        cadena_armada = ""
-        cadena_armada += letra_nueva
-
+    def self.validar_con_espacios(guia, cadena_nueva)
         #   "a d b a" == "a d"
-        if guia.start_with? cadena_armada
-            return true
-        else 
-            return false
-        end
+        return guia.start_with? cadena_nueva
     end
 end

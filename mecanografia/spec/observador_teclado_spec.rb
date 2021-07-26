@@ -14,6 +14,10 @@ RSpec.describe ObservadorTeclado do
             letra_nueva = "a d b" # gets.chomp => escribiera la letra a y luego enter 
             resultado = ObservadorTeclado.validar_con_espacios(guia, letra_nueva)
             expect(resultado).to eq(true)
+
+            letra_nueva = "a d b a" # gets.chomp => escribiera la letra a y luego enter 
+            resultado = ObservadorTeclado.validar_con_espacios(guia, letra_nueva)
+            expect(resultado).to eq(true)
         end
 
         it "cuando la cadena esta mal" do
